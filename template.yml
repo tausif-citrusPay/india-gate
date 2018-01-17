@@ -23,3 +23,17 @@ Resources:
           Properties:
             Path: /
             Method: get
+  PostHi:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: hi
+      Runtime: go1.x
+      Role:
+        Fn::ImportValue:
+          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
+      Events:
+        GetEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: post

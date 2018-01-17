@@ -7,12 +7,12 @@ import (
 
 func helloHandler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 
-
+	response := "hi" + request.Body
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Body:       string(request.Body),
+		Body:       response,
 		Headers: map[string]string{
-			"Content-Type": "text/html",
+			"Content-Type": "text/plain",
 		},
 	}, nil
 
