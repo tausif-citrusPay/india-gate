@@ -9,17 +9,31 @@ Parameters:
     Description: AWS CodeStar projectID used to associate new resources to team members
 
 Resources:
-  GetHelloWorld:
+#  GetHelloWorld:
+#    Type: AWS::Serverless::Function
+#    Properties:
+#      Handler: main/main
+#      Runtime: go1.x
+#      Role:
+#        Fn::ImportValue:
+#          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
+#      Events:
+#        GetEvent:
+#          Type: Api
+#          Properties:
+#            Path: /
+#            Method: get
+  PostHi:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: main
+      Handler: hi
       Runtime: go1.x
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
       Events:
-        GetEvent:
+        PostEvent:
           Type: Api
           Properties:
             Path: /
-            Method: get
+            Method: post
