@@ -15,7 +15,8 @@ Resources:
       Handler: hi
       Runtime: go1.x
       Code:
-        ZipFile: hi.zip
+        S3Bucket: aws-codestar-us-east-1-709325198486-india-gate-app
+        S3Key: hi.zip
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
@@ -31,7 +32,8 @@ Resources:
       Handler: hello
       Runtime: go1.x
       Code:
-        ZipFile: hello.zip
+        S3Bucket: aws-codestar-us-east-1-709325198486-india-gate-app
+        S3Key: hello.zip
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
