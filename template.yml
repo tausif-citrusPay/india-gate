@@ -14,7 +14,7 @@ Resources:
     Properties:
       Handler: hi
       Runtime: go1.x
-      CodeUri: aws-codestar-us-east-1-709325198486-india-gate-app/hi.zip
+      CodeUri: s3://aws-codestar-us-east-1-709325198486-india-gate-app/hi.zip
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
@@ -29,7 +29,7 @@ Resources:
     Properties:
       Handler: hello
       Runtime: go1.x
-      CodeUri: aws-codestar-us-east-1-709325198486-india-gate-app/hello.zip
+      CodeUri: s3://aws-codestar-us-east-1-709325198486-india-gate-app/hello.zip
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
