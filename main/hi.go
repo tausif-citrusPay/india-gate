@@ -2,9 +2,10 @@ package main
 
 import (
 	"github.com/aws/aws-lambda-go/events"
+	"github.com/aws/aws-lambda-go/lambda"
 )
 
-func helloHandler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
+func HelloHandler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 
 	response := "hi" + request.Body
 	return events.APIGatewayProxyResponse{
@@ -18,3 +19,6 @@ func helloHandler(request events.APIGatewayProxyRequest) (events.APIGatewayProxy
 }
 
 
+func main() {
+	lambda.Start(HelloHandler)
+}
