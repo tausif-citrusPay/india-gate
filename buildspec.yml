@@ -22,7 +22,7 @@ phases:
 #      - go get ./...
 
       # Ensure code passes all lint tests
-      - golint -set_exit_status
+#      - golint -set_exit_status
 
       # Check for common Go application problems with 'go tool vet'
 #      - go tool vet ./...

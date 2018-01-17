@@ -1,4 +1,4 @@
-package india_gate
+package main
 
 import (
 	"github.com/aws/aws-lambda-go/events"
