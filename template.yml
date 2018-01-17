@@ -12,7 +12,7 @@ Resources:
   GetHelloWorld:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: main/main
+      Handler: handler
       Runtime: go1.x
       Role:
         Fn::ImportValue:
@@ -26,13 +26,13 @@ Resources:
   PostHi:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: hi/hi
+      Handler: helloHandler
       Runtime: go1.x
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
       Events:
-        GetEvent:
+        PostEvent:
           Type: Api
           Properties:
             Path: /
