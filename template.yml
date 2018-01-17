@@ -12,7 +12,7 @@ Resources:
   GetHelloWorld:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: main/Handler
+      Handler: main/main
       Runtime: go1.x
       Role:
         Fn::ImportValue:
@@ -26,7 +26,7 @@ Resources:
   PostHi:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: hi/HelloHandler
+      Handler: hi/main
       Runtime: go1.x
       Role:
         Fn::ImportValue:
