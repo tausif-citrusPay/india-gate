@@ -9,33 +9,33 @@ Parameters:
     Description: AWS CodeStar projectID used to associate new resources to team members
 
 Resources:
-#  GetHelloWorld:
-#    Type: AWS::Serverless::Function
-#    Properties:
-#      Handler: hi
-#      Runtime: go1.x
-#      CodeUri: s3://aws-codestar-us-east-1-709325198486-india-gate-app/hi.zip
-#      Role:
-#        Fn::ImportValue:
-#          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
-#      Events:
-#        GetEvent:
-#          Type: Api
-#          Properties:
-#            Path: /
-#            Method: get
-  PostHi:
+  GetHelloWorld:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: hello
+      Handler: hi
       Runtime: go1.x
-      CodeUri: s3://aws-codestar-us-east-1-709325198486-india-gate-app/hello.zip
+      CodeUri: s3://aws-codestar-us-east-1-709325198486-india-gate-app/hi.zip
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
       Events:
-        PostEvent:
+        GetEvent:
           Type: Api
           Properties:
             Path: /
-            Method: post
+            Method: get
+#  PostHi:
+#    Type: AWS::Serverless::Function
+#    Properties:
+#      Handler: hello
+#      Runtime: go1.x
+#      CodeUri: s3://aws-codestar-us-east-1-709325198486-india-gate-app/hello.zip
+#      Role:
+#        Fn::ImportValue:
+#          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
+#      Events:
+#        PostEvent:
+#          Type: Api
+#          Properties:
+#            Path: /
+#            Method: post
