@@ -38,4 +38,4 @@ Resources:
 #          Type: Api
 #          Properties:
 #            Path: /
-            Method: post
+ #           Method: post
