@@ -15,7 +15,7 @@ Resources:
       Handler: hi
       Runtime: go1.x
       Code:
-        ZipFile: > hi
+        ZipFile: hi.zip
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
@@ -31,7 +31,7 @@ Resources:
       Handler: hello
       Runtime: go1.x
       Code:
-        ZipFile: > hello
+        ZipFile: hello.zip
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
