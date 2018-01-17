@@ -14,6 +14,8 @@ Resources:
     Properties:
       Handler: hi
       Runtime: go1.x
+      Code:
+        ZipFile: > hi
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
@@ -26,8 +28,10 @@ Resources:
   PostHi:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: hello/hello
+      Handler: hello
       Runtime: go1.x
+      Code:
+        ZipFile: > hello
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
